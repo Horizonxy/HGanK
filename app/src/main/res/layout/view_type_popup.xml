@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.horizon.gank.hgank.widget.TrianglePopupLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/normal_margin"
+        android:layout_margin="1px"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_android"
+            android:textColor="?attr/colorPrimary"
+            android:text="Android"
+            android:paddingLeft="@dimen/large_margin"
+            android:paddingBottom="@dimen/normal_margin"
+            android:layout_width="400px"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_ios"
+            android:textColor="?attr/colorPrimary"
+            android:text="IOS"
+            android:paddingBottom="@dimen/normal_margin"
+            android:paddingLeft="@dimen/large_margin"
+            android:layout_width="400px"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_js"
+            android:textColor="?attr/colorPrimary"
+            android:text="前端"
+            android:paddingBottom="@dimen/normal_margin"
+            android:paddingLeft="@dimen/large_margin"
+            android:layout_width="400px"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_vedio"
+            android:textColor="?attr/colorPrimary"
+            android:text="休息视频"
+            android:paddingBottom="@dimen/normal_margin"
+            android:paddingLeft="@dimen/large_margin"
+            android:layout_width="400px"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_app"
+            android:textColor="?attr/colorPrimary"
+            android:text="App"
+            android:paddingBottom="@dimen/normal_margin"
+            android:paddingLeft="@dimen/large_margin"
+            android:layout_width="400px"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_recom"
+            android:textColor="?attr/colorPrimary"
+            android:text="瞎推荐"
+            android:paddingBottom="@dimen/normal_margin"
+            android:paddingLeft="@dimen/large_margin"
+            android:layout_width="400px"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_data"
+            android:textColor="?attr/colorPrimary"
+            android:text="拓展资源"
+            android:paddingBottom="@dimen/normal_margin"
+            android:paddingLeft="@dimen/large_margin"
+            android:layout_width="400px"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</com.horizon.gank.hgank.widget.TrianglePopupLayout>

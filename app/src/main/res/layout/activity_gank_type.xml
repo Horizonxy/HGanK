@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.horizon.gank.hgank.widget.AutoLoadListView
+        android:id="@+id/gank_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:dividerHeight="2px"
+        android:divider="@color/background"/>
+
+</FrameLayout>
