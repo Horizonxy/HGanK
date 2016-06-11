@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.horizon.gank.hgank.Application;
 import com.horizon.gank.hgank.R;
+import com.horizon.gank.hgank.utils.CrashHandler;
 import com.horizon.gank.hgank.utils.SystemStatusManager;
 import com.horizon.gank.hgank.utils.ThemeUtils;
 import com.horizon.gank.hgank.widget.MonIndicator;
@@ -46,6 +47,9 @@ public class BaseActivity extends AutoLayoutActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        CrashHandler crashHandler = CrashHandler.getInstance();
+        crashHandler.init(this);
 
         Application.getInstance().addAty(this);
     }
