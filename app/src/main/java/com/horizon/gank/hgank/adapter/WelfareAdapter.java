@@ -80,7 +80,7 @@ public class WelfareAdapter extends RecyclerView.Adapter<WelfareAdapter.WelfaceH
             String desc = data.getDesc();
             String user = data.getWho();
             holder.mItemTvTime.setText(TextUtils.isEmpty(desc) ? "" : desc);
-            holder.mItemTvUser.setText(TextUtils.isEmpty(user) ? "" : "-- " + user);
+            holder.mItemTvUser.setText(TextUtils.isEmpty(user) ? "" : "via. " + user);
 
             holder.mItemIvWelfare.setOnClickListener(new ImageClickListener(holder, data));
         }
