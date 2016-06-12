@@ -23,7 +23,8 @@
         android:layout_width="match_parent"
         android:textSize="@dimen/small_size"
         android:textColor="?attr/colorPrimary"
-        android:layout_marginBottom="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginBottom="@dimen/small_margin"
         android:gravity="right"
         android:layout_height="wrap_content" />
 
