@@ -4,9 +4,10 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.FrameLayout;
 
-public class AnimationFrameLayout extends FrameLayout {
+import com.zhy.autolayout.AutoFrameLayout;
+
+public class AnimationFrameLayout extends AutoFrameLayout {
 
     int mHeight;
     ValueAnimator mValueAnimator;
