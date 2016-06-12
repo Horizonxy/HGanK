@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
 
+import com.horizon.gank.hgank.utils.DisplayUtils;
 import com.zhy.autolayout.AutoLinearLayout;
 
 public class TrianglePopupLayout extends AutoLinearLayout {
@@ -17,7 +18,7 @@ public class TrianglePopupLayout extends AutoLinearLayout {
 
     private int mBorderColor = Color.BLACK;
     private int mBorderWidth = 2;
-    private int mTrangleWidth = 40;
+    private int mTrangleWidth;
     private int mTrangleHeight;
 
     public TrianglePopupLayout(Context context) {
@@ -26,6 +27,8 @@ public class TrianglePopupLayout extends AutoLinearLayout {
 
     public TrianglePopupLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        mTrangleWidth = DisplayUtils.dip2px(context, 8);
 
         initPaint();
     }

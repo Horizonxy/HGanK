@@ -18,6 +18,7 @@ import com.horizon.gank.hgank.model.bean.CommonCacheVo;
 import com.horizon.gank.hgank.model.bean.GanKData;
 import com.horizon.gank.hgank.model.bean.GanKResult;
 import com.horizon.gank.hgank.presenter.GankPresenter;
+import com.horizon.gank.hgank.utils.DisplayUtils;
 import com.horizon.gank.hgank.utils.GsonUtils;
 import com.horizon.gank.hgank.utils.NetUtils;
 import com.horizon.gank.hgank.utils.ThemeUtils;
@@ -118,7 +119,7 @@ public class MainActivity extends BaseActivity implements GankView {
         btnRight.setVisibility(View.VISIBLE);
 
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        mRecyclerView.addItemDecoration(new SpacesItemDecoration(14));
+        mRecyclerView.addItemDecoration(new SpacesItemDecoration(DisplayUtils.dip2px(this, 4)));
 
         mRecyclerView.setLoadingData(new AutoRecyclerView.LoadingData() {
             @Override
@@ -200,9 +201,9 @@ public class MainActivity extends BaseActivity implements GankView {
     private void setIconDrawable(TextView view, IIcon icon) {
         view.setCompoundDrawablesWithIntrinsicBounds(new IconicsDrawable(this)
                         .icon(icon)
-                        .color(ThemeUtils.getThemeColor(this, R.attr.colorPrimary)).sizePx(40),
+                        .color(ThemeUtils.getThemeColor(this, R.attr.colorPrimary)).sizeDp(12),
                 null, null, null);
-        view.setCompoundDrawablePadding(15);
+        view.setCompoundDrawablePadding(DisplayUtils.dip2px(this, 4));
     }
 
     @OnClick(R.id.btn_left)
