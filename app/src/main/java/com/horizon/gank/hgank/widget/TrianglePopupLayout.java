@@ -7,6 +7,7 @@ import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
+import android.view.View;
 
 import com.horizon.gank.hgank.utils.DisplayUtils;
 import com.zhy.autolayout.AutoLinearLayout;
@@ -20,6 +21,7 @@ public class TrianglePopupLayout extends AutoLinearLayout {
     private int mBorderWidth = 2;
     private int mTrangleWidth;
     private int mTrangleHeight;
+    private int mOffsetX;
 
     public TrianglePopupLayout(Context context) {
         this(context, null);
@@ -28,6 +30,9 @@ public class TrianglePopupLayout extends AutoLinearLayout {
     public TrianglePopupLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
 
+        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        int padding = DisplayUtils.dip2px(context, 1);
+        setPadding(padding, padding, padding, padding);
         mTrangleWidth = DisplayUtils.dip2px(context, 8);
 
         initPaint();
@@ -38,7 +43,8 @@ public class TrianglePopupLayout extends AutoLinearLayout {
 //        mBorderPaint.setColor(mBorderColor);
 //        mBorderPaint.setStyle(Paint.Style.FILL);
         mBorderPaint.setStrokeWidth(mBorderWidth);
-        mBorderPaint.setPathEffect(new CornerPathEffect(6));//画的线的连接处，有点圆角
+        mBorderPaint.setDither(true);
+        mBorderPaint.setPathEffect(new CornerPathEffect(8));//画的线的连接处，有点圆角
     }
 
     @Override
@@ -53,7 +59,12 @@ public class TrianglePopupLayout extends AutoLinearLayout {
         mTrangleHeight = (int) Math.sqrt(Math.pow(mTrangleWidth, 2) - Math.pow(mTrangleWidth/2, 2));
         setMeasuredDimension(width, height + mTrangleHeight);
 
-        int trangleStart = (int) (getMeasuredWidth() - mTrangleWidth * 1.5);
+        if(mOffsetX > width){
+            mOffsetX = width - mTrangleWidth - (getMeasuredWidth() - mTrangleWidth) / 2;
+        } else if(mOffsetX < 0){
+            mOffsetX = -(getMeasuredWidth() - mTrangleWidth) / 2;
+        }
+        int trangleStart = (getMeasuredWidth() - mTrangleWidth) / 2 + mOffsetX;
 
         initPath(trangleStart, width, height);
     }
@@ -71,8 +82,9 @@ public class TrianglePopupLayout extends AutoLinearLayout {
     }
 
     public void invalidate(int x){
-        int trangleStart = (getMeasuredWidth() - mTrangleWidth) / 2 + x;
-        initPath(trangleStart, getMeasuredWidth(), getMeasuredHeight() - mTrangleHeight);
+        mOffsetX = x;
+//        int trangleStart = (getMeasuredWidth() - mTrangleWidth) / 2 + x;
+//        initPath(trangleStart, getMeasuredWidth(), getMeasuredHeight() - mTrangleHeight);
         invalidate();
     }
 
